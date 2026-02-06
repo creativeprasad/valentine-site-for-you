@@ -97,10 +97,11 @@ button:hover {
 }
 
 .final-text {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   color: #ff2e63;
   margin-top: 25px;
+  line-height: 1.6;
 }
 
 @keyframes blink {
