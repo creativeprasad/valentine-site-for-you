@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff4b7d, #ff758c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  animation: fadeIn 0.8s ease;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #ff2e63;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #ff6f91;
+  font-size: 16px;
+}
+
+.buttons {
+  margin-top: 25px;
+  position: relative;
+}
+
+button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff2e63;
+  color: #fff;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#noBtn {
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+#dayContent h2 {
+  font-family: 'Pacifico', cursive;
+  color: #ff2e63;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#dayContent p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.countdown {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #ff2e63;
+  font-weight: bold;
+}
+
+/* BLINKING TEXT */
+.blink {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff2e63;
+  animation: blink 1.2s infinite;
+  margin-top: 20px;
+}
+
+.final-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff2e63;
+  margin-top: 25px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* SMALL DEVICES */
+@media (max-width: 360px) {
+  h1 { font-size: 24px; }
+  button { font-size: 14px; padding: 10px 22px; }
+}
+
+/* -------------------------- */
+/* NEW ANIMATIONS (IMPORTANT) */
+/* -------------------------- */
+
+/* Question Re-Ask Animation */
+.questionPop {
+  animation: questionPop 0.6s ease;
+}
+
+@keyframes questionPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Fade effect for question */
+.questionFade {
+  animation: questionFade 0.6s ease;
+}
+
+@keyframes questionFade {
+  0% { opacity: 0.3; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Card Shake */
+.shake {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
+}
+
+/* LAST CHANCE BIG EFFECT */
+.lastChanceText {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff004c;
+  text-shadow: 0px 0px 12px rgba(255, 0, 76, 0.5);
+}
+
+.pop {
+  animation: popUp 0.7s ease;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Background Pulse */
+.pulse-bg {
+  animation: pulseBg 1s infinite;
+}
+
+@keyframes pulseBg {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+/* Make YES button attractive */
+.yes-grow {
+  transform: scale(1.25);
+  box-shadow: 0px 0px 20px rgba(255, 46, 99, 0.6);
+}

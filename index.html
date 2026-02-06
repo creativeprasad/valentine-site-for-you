@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Will You Be My Valentine? 💖</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- FIRST QUESTION -->
+    <div id="questionBox" class="card">
+      <h1 id="mainQuestion">Will you be my Valentine? 💖</h1>
+
+      <h3 id="lastChance" class="hidden lastChanceText">
+        ⚠️ This is your LAST chance to say YES 🥺💖
+      </h3>
+
+      <div class="buttons">
+        <button id="yesBtn">Yes 💘</button>
+        <button id="noBtn">No 💔</button>
+      </div>
+    </div>
+
+    <!-- READY QUESTION -->
+    <div id="readyBox" class="card hidden">
+      <h1>Are you ready for this surprise? 😍</h1>
+      <div class="buttons">
+        <button id="readyYesBtn">Yes, I'm Ready 💝</button>
+      </div>
+    </div>
+
+    <!-- VALENTINE WEEK -->
+    <div id="valentineBox" class="card hidden">
+      <h1>💝 Valentine Week Surprise 💝</h1>
+      <div id="dayContent"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
