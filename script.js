@@ -49,7 +49,7 @@ noBtn.addEventListener("click", () => {
 
   // Restart question animation each time
   mainQuestion.classList.remove("questionPop", "questionFade");
-  void mainQuestion.offsetWidth; // Restart animation trick
+  void mainQuestion.offsetWidth;
   mainQuestion.classList.add("questionPop", "questionFade");
 
   // After 3 NOs, No button runs away
@@ -80,7 +80,7 @@ readyYesBtn.addEventListener("click", () => {
 /* VALENTINE DAYS */
 const days = [
   { 
-    date: "2026-02-06", 
+    date: "2026-02-07", 
     title: "Rose Day 🌹", 
     msg: "If I could give you a rose for every time you crossed my mind, I’d have a whole garden by now. This rose isn’t just a flower — it’s my quiet way of saying that I admire you more than I ever say out loud. Your smile has this soft magic that makes ordinary days feel special, and your presence alone feels comforting. I don’t know where life will take us, but today I just want you to know that you are genuinely special to me. This rose carries my respect, my admiration, and a little piece of my heart 💕"
   },
@@ -121,10 +121,13 @@ const days = [
   }
 ];
 
-/* LOAD DAY */
+/* LOAD DAY (FIXED LOCAL DATE) */
 function loadValentineDay() {
   const now = new Date();
-  const today = now.toISOString().split("T")[0];
+
+  // FIX: Local date in format YYYY-MM-DD
+  const today = new Date().toLocaleDateString("en-CA");
+
   const index = days.findIndex(d => d.date === today);
 
   if (index !== -1) {
@@ -144,7 +147,9 @@ function loadValentineDay() {
     } else {
       html += `
         <div class="final-text">
-          I’m waiting for your response with all my heart.<br>Please send me your answer on Snapchat or WhatsApp.<br>I’ll be waiting… for you. 💔➡️❤️
+          I’m waiting for your response with all my heart.<br>
+          Please send me your answer on Snapchat or WhatsApp.<br>
+          I’ll be waiting… for you. 💔➡️❤️
         </div>
       `;
     }
@@ -156,7 +161,18 @@ function loadValentineDay() {
   }
 
   const next = days.find(d => d.date > today);
-  const diff = Math.ceil((new Date(next.date) - now) / (1000 * 60 * 60 * 24));
+
+  if (!next) {
+    dayContent.innerHTML = `
+      <h2>💖 Valentine Week Finished</h2>
+      <p>All surprises are completed 💝</p>
+    `;
+    return;
+  }
+
+  const diff = Math.ceil(
+    (new Date(next.date + "T00:00:00") - now) / (1000 * 60 * 60 * 24)
+  );
 
   dayContent.innerHTML = `
     <h2>⏳ Surprise Locked</h2>
@@ -170,11 +186,14 @@ function startCountdown(nextDate) {
 
   function update() {
     const now = new Date().getTime();
+
+    // Local midnight target
     const target = new Date(nextDate + "T00:00:00").getTime();
     const diff = target - now;
 
     if (diff <= 0) {
       el.innerHTML = "🎉 Surprise Unlocked!";
+      loadValentineDay(); // refresh automatically
       return;
     }
 
@@ -188,4 +207,3 @@ function startCountdown(nextDate) {
   update();
   setInterval(update, 1000);
 }
-
