@@ -80,7 +80,7 @@ readyYesBtn.addEventListener("click", () => {
 /* VALENTINE DAYS */
 const days = [
   { 
-    date: "2026-02-07", 
+    date: "2026-02-06", 
     title: "Rose Day 🌹", 
     msg: "If I could give you a rose for every time you crossed my mind, I’d have a whole garden by now. This rose isn’t just a flower — it’s my quiet way of saying that I admire you more than I ever say out loud. Your smile has this soft magic that makes ordinary days feel special, and your presence alone feels comforting. I don’t know where life will take us, but today I just want you to know that you are genuinely special to me. This rose carries my respect, my admiration, and a little piece of my heart 💕"
   },
@@ -188,3 +188,4 @@ function startCountdown(nextDate) {
   update();
   setInterval(update, 1000);
 }
+
