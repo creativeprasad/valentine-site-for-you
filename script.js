@@ -111,13 +111,13 @@ const days = [
   },
   { 
     date: "2026-02-13", 
-    title: "Kiss Day 😘", 
-    msg: "A kiss isn’t just about lips — it’s about connection. It’s about trust, closeness, and unspoken feelings. If I ever got the chance, it would be a gentle kiss filled with affection, respect, and all the emotions I find hard to put into words. Until then, consider this message a soft reminder that you hold a very special place in my heart 💓"
+    title: "Kiss Day 😘",
+    msg: "Happy Kiss Day"
   },
   { 
     date: "2026-02-14", 
     title: "Valentine’s Day 💖", 
-    msg: "Happy Valentine’s Day to the one who unknowingly makes my days brighter. You may not realize it, but your existence adds something beautiful to my life. Loving you — or even just liking you — feels pure, calm, and real. Whether today brings us closer or simply leaves this feeling unspoken, I’m grateful for you. Thank you for being you, for existing, and for making my heart feel this way 💝"
+    msg: "Happy Valentine’s Day 😘💘<br> Hey… you still haven’t accepted my proposal 😌<br> But I really like you."
   }
 ];
 
@@ -148,7 +148,6 @@ function loadValentineDay() {
       html += `
         <div class="final-text">
           I’m waiting for your response with all my heart.<br>
-          Please send me your answer on Snapchat or WhatsApp.<br>
           I’ll be waiting… for you. 💔➡️❤️
         </div>
       `;
@@ -207,3 +206,4 @@ function startCountdown(nextDate) {
   update();
   setInterval(update, 1000);
 }
+
